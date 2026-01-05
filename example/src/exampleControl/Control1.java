@@ -14,7 +14,7 @@ public class Control1 {
 
 		// 요금
 		int bW = 1000; // 기본요금(basic wage)
-		int sBW = 2500; // 4시간 요금(surcharge wage)
+		int sBW = 2500; // 4시간 요금(second basic wage)
 		int wage = 0;
 		int surcharge = 100; // 할증요금 10분당 100원
 		int payment = 0; // 지불요금
@@ -26,29 +26,32 @@ public class Control1 {
 		
 		
 		Scanner kbd = new Scanner(System.in);
-		System.out.println("주차시간을 분단위로 입력해 주세요");
+		System.out.print("주차시간을 분단위로 입력해 주세요 : ");
 		time = kbd.nextInt();
-		int surchargeT = (time-basicT)/10; // 할증 계산 시간 변수
+		
+		int surchargeT = 0; // 할증 계산 시간 변수
 
+		// 조건문1 (기준값 240, 기본요금 변경, 할증요금 초기화)
 		if( time >= 240  ) {
 			wage = sBW;
 			surchargeT = (time-basicT-210)/10;
 		
 		}else {
 			wage = bW;
+			surchargeT = (time-basicT)/10;
 		}
 		
+		// 조건문2 (기준값 40, 할증요금 추가)
 		if (time >=40) {
 			payment = (surchargeT*surcharge)+wage;
-			System.out.println("납부 요금 : "+payment);
+			System.out.println("납부 요금 : "+payment+"원");
 		}else {
 			payment = wage;
-			System.out.println("납부 요금 : "+payment);
+			System.out.println("납부 요금 : "+payment+"원");
 		}
 
 		
-/* for문, if문으로 접근
- * 기본시간 30분
+/* 기본시간 30분
  * 40분부터 추가요금 100원
  * 60분에 600원
  * 1시간 1300원, 2시간 1900원, 3시간 2500원, 3시간 50분 3000원, 4시간 2500원
