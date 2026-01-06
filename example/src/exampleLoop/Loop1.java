@@ -20,9 +20,10 @@ public class Loop1 {
 		Scanner sc = new Scanner(System.in);
 
 		
-		
-		for(int i =1;i<=15;i++) { // 15회 반복
+		// 반복문 15회 반복
+		for(int i =1;i<=15;i++) {
 			System.out.print("안 내면 술래 가위바위보~ (가위: 1, 바위: 2, 보: 3) : ");
+			
 			// 컴퓨터와 user의 가위바위보 정하기
 			int com = (int)Math.floor(Math.random()*3)+1;
 			int user = sc.nextInt();
