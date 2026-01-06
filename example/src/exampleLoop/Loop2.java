@@ -19,7 +19,6 @@ public class Loop2 {
 		
 		// 숫자 입력
 		Scanner scan = new Scanner(System.in);
-		
 		System.out.print("1~50 중 입력 : ");
 		int user = scan.nextInt();
 		
@@ -38,14 +37,15 @@ public class Loop2 {
 				System.out.println("UP");
 				min = com+1; // 최솟값 상승
 				com = (int) Math.floor(Math.random() * (max - min + 1)) + min;
-
 				System.out.println("컴퓨터가 고른 숫자 : " + com);
+				
 			} else if (com > user) { // 난수가 정답보다 큰 경우 /ex) 난수 : 35, 정답 : 25
 				System.out.println("DOWN");
 				max = com-1; // 최댓값 하락
 				com = (int) Math.floor(Math.random() * (max - min + 1)) + min;
 				System.out.println("컴퓨터가 고른 숫자 : " + com);
-			} else if (user == com) {
+				
+			} else if (user == com) { // 난수와 정답이 같은 경우
 				System.out.println("");
 				System.out.println("정답~!!");
 				break;
