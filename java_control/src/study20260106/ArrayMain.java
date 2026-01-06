@@ -3,23 +3,82 @@ package study20260106;
 public class ArrayMain {
 
 	public static void main(String[] args) {
-		
-		String a;
-		int b;
-		
-		char c = 'a';
-		char[] temp = new char[5];
-		
-		temp[0] = 'g'; temp[1] = 'o'; temp[2] = 'o'; temp[3] = 'd';
-		System.out.println(temp);
-		
-		
-		
-		
-		
-		
-		
-		
+
+		String a = "good";
+		String aa = new String("member");
+
+		System.out.println(aa + "   " + a);
+
+		String word = "i like banana";
+
+		System.out.println(word);
+
+		System.out.println(word.charAt(4));
+
+		System.out.println(word.indexOf('b'));
+
+		System.out.println(word.substring(2));
+
+		String name = "이순신-김유신-김춘추-이성계-박문수-박팽년";
+
+		System.out.println(name);
+
+		String[] names = name.split("-");
+		// String[] names = {"이순신", "김유신", "김춘추", "이성계", "박문수", "박팽년"};
+
+		System.out.println(names[0]);
+
+		// 반복문으로 이름을 전부 출력하세요. (한줄에 하나씩)
+
+		for (String wow : names) {
+			if (wow.indexOf('신') != -1)
+				System.out.println(wow);
+
+		}
+
+		String[] fruits = { "사과", "딸기", "배", "수박", "바나나", "복숭아", "파인애플", "아보카도", "오렌지", "감", "한라봉", "망고" };
+
+		// 문제1. fruits 배열에서 과일 이름이 3자 이상인 것만 출력하세요
+		System.out.println("----문제1----");
+		for (String fruit : fruits) {
+			if (fruit.length() >= 3) {
+				System.out.println(fruit);
+			}
+		}
+
+		// 문제2. fruits 배열에서 딸기와 수박은 제외하고 출력하세요!
+
+		System.out.println("-----문제2-----");
+		for (String fruit : fruits) {
+			if (!fruit.equals("딸기") && !fruit.equals("수박")) {
+				System.out.println(fruit);
+			}
+		}
+
+		System.out.println("\n\n\n");
+
+		// 과일을 한 줄에 4개씩 출력할 것이다.
+		System.out.println("----문제3----");
+
+		for (int i = 0; i < fruits.length; i++) {
+			if (i % 4 == 0)
+				System.out.println();
+			
+			System.out.print(fruits[i] + " ");
+
+		}
+
+	}
+
+//		int b;
+//		
+//		char c = 'a';
+//		
+//		char[] temp = new char[5];
+//		
+//		temp[0] = 'g'; temp[1] = 'o'; temp[2] = 'o'; temp[3] = 'd';
+//		System.out.println(temp);
+
 //		int[] arr = new int[5];
 //		// arr은 참조 변수이다. 참조 변수는 메모리 주소를 저장할 수 있는 변수이다.
 //		//
@@ -49,9 +108,8 @@ public class ArrayMain {
 //
 //		int[] arr2 = { 10, 20, 30 };
 
-	}
-
 }
+
 /*
  * 배열 - 동일한 데이터 타입의 데이터 저장공간이 연속적으로 나열되어 있는 구조
  * 
