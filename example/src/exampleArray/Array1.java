@@ -31,16 +31,20 @@ public class Array1 {
 		 * 
 		 * <예시>
 		 * 
-		 * 예약 인원 수 : 3 
-		 * 3석 예약 완료 (1번 ~ 3번)
+		 * 예약 인원 수 : 3 3석 예약 완료 (1번 ~ 3번)
 		 * 
-		 * 예약 인원 수 : 5 
-		 * 연속 좌석이 없습니다
+		 * 예약 인원 수 : 5 연속 좌석이 없습니다
 		 * 
 		 * 
 		 */
 
-
+		/*
+		 * <Feedback>
+		 * 
+		 * 1번. user에 예약인원 입력하는거 검증하는 if문 있으면 좋을꺼 같음 
+		 * 2번. 좌석 현황을 50줄 출력 되게 해놔서 보기좋게 하는게 좋을꺼같음
+		 * 
+		 */
 
 		// 배열 선언
 		int[] seats = new int[50];
@@ -49,45 +53,50 @@ public class Array1 {
 
 		// 예약인원 입력
 		Scanner sc = new Scanner(System.in);
-		System.out.println("예약 인원을 입력해 주세요 : ");
+		System.out.print("예약 인원을 입력해 주세요 : ");
+
 		int user = sc.nextInt();
-
-		// 배열에 공석과 예약석 채워넣기
-		for (int i = 0; i < seats.length; i++) {
-			seats[i] = (int) Math.floor(Math.random() * 2);
-			System.out.println("좌석 " + (i + 1) + "번 : " + seats[i]);
-
-			// 조건문1 (연속된 공석 찾기)
-			if (seats[i] == 1)
-				count1 = 0;
-
-			else if (seats[i] == 0)
-				count1++;
-
-			// 조건문2 (예약 자리수와 공석이 일치시 할 일 > 1번 배열 값 변경(예약 처리), 2번 예약좌석 출력)
-			if (count1 == user) {
-				count1 = 0; // 예약 하면서 카운트 초기화
-				count2++;
-				
-				// 배열값 1로 변경(예약 처리)
-				for(int k = 0; k < user; k++ ) {
-				seats[i-k] = 1;
-				System.out.println("예약처리 확인 :"+(i-k+1)+"번 : "+seats[i-k]);				
-				}
-				
-				// 예약좌석 출력
-				System.out.println("예약 인원 수 : " + user + "명");
-				System.out.println(user+"석 예약 완료 (" + (i - user + 2) + "번 ~ " + (i + 1) + "번)");
-				break;
-				// 3석 예약 완료 (1번 ~ 3번)
-			}
-
-		} // 반복문 밖
 		
-		// 조건문3 (예약 처리 못한 경우)
-		if (count2 == 0) {
-			System.out.println("연속좌석이 없습니다");
-		}
+		// 조건문 (예약요구 인원이 50명 이하인지 확인)
+		if (user > 50) {
+			System.out.println("예약인원 수를 확인해 주세요(50석 이하)");
+		} else {
 
+			// 배열에 공석과 예약석 채워넣기
+			for (int i = 0; i < seats.length; i++) {
+				seats[i] = (int) Math.floor(Math.random() * 2);
+//			System.out.println("좌석 " + (i + 1) + "번 : " + seats[i]);
+
+				// 조건문1 (연속된 공석 찾기)
+				if (seats[i] == 1)
+					count1 = 0;
+
+				else if (seats[i] == 0)
+					count1++;
+
+				// 조건문2 (예약 자리수와 공석이 일치시 할 일 > 1번 배열 값 변경(예약 처리), 2번 예약좌석 출력)
+				if (count1 == user) {
+					count1 = 0; // 예약 하면서 카운트 초기화
+					count2++;
+
+					// 배열값 1로 변경(예약 처리)
+					for (int k = 0; k < user; k++) {
+						seats[i - k] = 1;
+						System.out.println("예약처리 확인 :" + (i - k + 1) + "번 : " + seats[i - k]);
+					}
+
+					// 예약좌석 출력
+					System.out.println("예약 인원 수 : " + user + "명");
+					System.out.println(user + "석 예약 완료 (" + (i - user + 2) + "번 ~ " + (i + 1) + "번)");
+					break;
+				}
+
+			} // 반복문 밖
+
+			// 조건문3 (예약 처리 못한 경우)
+			if (count2 == 0) {
+				System.out.println(user+"석 만큼의 연속좌석이 없습니다");
+			}
+		}
 	}
 }
