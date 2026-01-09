@@ -10,7 +10,7 @@ public class Cat {
 	Cat(){}
 	
 	Cat(String breed){
-		this.breed = breed;
+		this("먼치킨", "뽀식", "수컷");
 	}
 	
 //	Cat(String breed, String name){
@@ -19,8 +19,9 @@ public class Cat {
 //	}
 	
 	Cat(String breed, String name, String gender){
-		this.breed = breed;
+
 		this.name = name;
+		this.breed = breed;
 		this.gender = gender;
 	}
 	

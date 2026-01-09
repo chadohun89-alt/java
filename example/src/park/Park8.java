@@ -2,7 +2,7 @@ package park;
 
 import java.util.Scanner;
 
-public class park8 {
+public class Park8 {
 
 	public static void main(String[] args) {
 		// 짝수인지 3의 배수인지 판별하기
