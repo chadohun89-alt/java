@@ -84,10 +84,8 @@ public class Special3 {
 			// 위험 요일 관련
 			if(클레임수[i]>=2||(상담수[i]>=10&&계약수[i]<=0) ) {
 				위험요일모음[i] = 요일[i];
-				if(위험요일모음[i]!=null) {
 				s = 위험요일모음[i];
-				}
-			}else if (s != null) { // 위험 요일 없으면 wow변수 false 처리
+			}else if (s != null) { // 위험 요일 있으면 wow변수 false 처리
 				wow = false; 
 			}
 			
@@ -127,7 +125,7 @@ public class Special3 {
 				System.out.println("-"+위험요일모음[i]);
 			}
 		}
-		if (wow) {System.out.println("위험 요일 없음");} // 위험요일 없으면 false라서 출력 안 됨
+		if (wow) {System.out.println("위험 요일 없음");} // 위험요일 있으면 false라서 출력 안 됨
 
 		
 		// 베스트 1, 2등;
