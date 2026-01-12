@@ -76,8 +76,8 @@ public class BingoGame {
 				}
 				if (row == 5) end++; // 해당 줄에 0이 5개라면 row는 5가 된다. 1빙고 완성
 				if (col == 5) end++; // 세로 방향의 열, 0이 5개라면 col은5, 1빙고 완성
-				if(bingo[i*6]==0) cross1 ++;
-				if(bingo[i*4+4]==0) cross2 ++;
+				if (bingo[i*6]==0) cross1 ++;
+				if (bingo[i*4+4]==0) cross2 ++;
 				if (cross1 == 5) end++;
 				if (cross2 == 5) end++;
 			}

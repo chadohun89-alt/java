@@ -27,7 +27,7 @@ public class Special3 {
 		
 		
 		
-		//배열 및 변수 선언
+		// 1. 배열 및 변수 선언
 		
 		// 7일동안 하루 상담 수
 		int[] 상담수 = {12, 8, 15, 15, 3, 9, 20}; // 월~일
@@ -66,7 +66,7 @@ public class Special3 {
 		int secondIndex = 0;
 			
 
-		// 반복문
+		// 2. 반복문
 		for(int i=0; i<7; i++) {
 			
 			//총합 관련
@@ -104,7 +104,7 @@ public class Special3 {
 		
 		
 		
-		// 콘솔창 출력
+		// 3. 콘솔창 출력
 		System.out.println("출력 결과");
 		System.out.println();
 		
