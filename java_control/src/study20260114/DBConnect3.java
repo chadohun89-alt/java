@@ -5,15 +5,17 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-public class DBConnect2 {
+
+public class DBConnect3 {
+
+	// SQL 관련 변수 설정
 	private Connection conn;
 	private Statement st;
 	private ResultSet rs;
 
-
 	// 생성자
-	public DBConnect2() {
-		connect(); // 데이터 베이스 연결을 위한 메서드 호출
+	public DBConnect3() {
+		connect();
 	}
 
 	// 연결 메서드 정의
@@ -26,27 +28,21 @@ public class DBConnect2 {
 			String username = "ckehgjs";
 			String password = "1234";
 			String url = "jdbc:mysql://localhost:3306/ckehgjs";
-
+			
 			conn = DriverManager.getConnection(url, username, password);
-
+			
 		} catch (Exception e) {
 			System.out.println("접속 실패");
-
 		}
-
 	}
+
 	
-	//DBMS에 쿼리문 보내기
-	// 
-	public Item[] findAll() {
-		Item[] items = new Item[5];
+	// DBMS에 쿼리문 보내기
+	
+	public Sword[] findAll() {
+		Sword[]	swords = new Sword[6];
 		
-		// 쿼리문 작성하기
-		// 쿼리문 보내기
-		// 결과 받기
-		// 데이터를 클래스 객체에 저장하고 배열에 저장하기
-		
-		String sql = "select * from item";
+		String sql = "select * from sword";
 		
 		try {
 			st = conn.createStatement();
@@ -54,21 +50,18 @@ public class DBConnect2 {
 			
 			int i = 0;
 			while(rs.next()) {
-				Item data = new Item(rs.getString("item_name"), rs.getInt("item_price"),
-						rs.getString("item_main_image"), rs.getInt("item_stock") );
-			
-				items[i] = data;
+				Sword data = new Sword(rs.getString("sword_name"),rs.getInt("sword_weight"), rs.getString("sword_orner"));
+				
+				swords[i] = data;
 				i++;
-			
+				
 			}
 			
 		}catch(Exception e) {
 			System.out.println("질의 실패 및 객체생성 실패");
 		}
 		
-		
-		return items;
-		
+		return swords;
 	}
-
+	
 }
