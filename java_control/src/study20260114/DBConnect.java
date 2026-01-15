@@ -30,7 +30,7 @@ public class DBConnect {
 		}catch (Exception e) {
 			
 			System.out.println("접속 실패");
-			
+			e.printStackTrace();
 		}
 		
 	}
