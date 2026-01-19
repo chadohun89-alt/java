@@ -9,9 +9,9 @@ public class Expense extends Transaction {
 	  2. 자식 클래스
 	  	- Transaction 상속
 	  	- 추상메서드 오버라이드
-	  		○ Income : 잔액증가 (매개변수 값만큼 amount 증가)
-	  		○ Expense : 잔액감소 (매개변수 값만큼 amount 감소)
-	  		○ Transfer : 잔액감소 (매개변수 값만큼 amount 감소)
+	  		○ Income : 잔액증가 (money 값만큼 amount 증가)
+	  		○ Expense : 잔액감소 (money 값만큼 amount 감소)
+	  		○ Transfer : 잔액감소 (money 값만큼 amount 감소)
 	 
 	 */
 	
