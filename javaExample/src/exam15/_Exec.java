@@ -30,37 +30,32 @@ public class _Exec {
 		
 		Scanner sc = new Scanner(System.in);
 		List<Product> list = new ArrayList<>();
-		
-		Product product1 = new Product("라면", 1000, 5);
-		Product product2 = new Product("맥주", 5000, 3);
-		Product product3 = new Product("소주", 5000, 2);
-		
-		
-		product1.setBundlePrice(product1.bundlePrice());
-		product2.setBundlePrice(product2.bundlePrice());
-		product3.setBundlePrice(product3.bundlePrice());
-		
-		int totalPrice = product1.getBundlePrice()+product2.getBundlePrice()+product3.getBundlePrice();
-		
 
 
-		list.add(product1);
-		list.add(product2);
-		list.add(product3);
 		
-		System.out.println(list.get(0));
-		System.out.println(list.get(1));
-		System.out.println(list.get(2));
-		System.out.println("---------------");
-		System.out.println("합계 : "+ totalPrice);
+		for(int i = 0; i<3; i++) {
+			Product product = new Product();
+			System.out.print("상품이름, 가격, 수량 입력 : ");
+			product.productName = sc.nextLine();
+			product.productPrice = sc.nextInt();
+			sc.nextLine();
+			product.productQuantity = sc.nextInt();
+			sc.nextLine();
+			product.bundlePrice();
+			
+			list.add(product);
+		}
 		
+		int totalPrice = list.get(0).bundlePrice + list.get(1).bundlePrice + list.get(2).bundlePrice;
+		
+		System.out.println("영수증");
+		
+		for( Product p : list) {
+			System.out.println(p);
+		}
+		System.out.println(totalPrice);
 
-		
-		
-		
-		
-		
-		
+	
 
 	}
 

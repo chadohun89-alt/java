@@ -3,10 +3,10 @@ package exam15;
 public class Product {
 	
 	// 변수 설정
-	private String productName;
-	private int productPrice;
-	private int productQuantity;
-	private int bundlePrice;
+	String productName;
+	int productPrice;
+	int productQuantity;
+	int bundlePrice;
 
 	
 	
@@ -57,6 +57,12 @@ public class Product {
 		this.productName = productName;
 		this.productPrice = productPrice;
 		this.productQuantity = productQuantity;
+	}
+	
+	
+
+	public Product() {
+		super();
 	}
 
 	// toString 메서드
