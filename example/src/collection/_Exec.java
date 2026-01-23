@@ -169,7 +169,7 @@ public class _Exec {
 				
 			default :
 				System.out.println("숫자를 확인해 주세요!");
-				
+				break;
 			} // 스위치문 블록
 			
 		} // 와일문 블록
