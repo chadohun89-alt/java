@@ -71,11 +71,13 @@ public class Example {
 			sc.nextLine();
 			
 			if(process == 1) {
+				System.out.println("- 목록 -");
 				for(Product p : list) {
 				System.out.println(p);	
 				}
 			}
 			else if(process == 2) {
+				System.out.println("- 등록 -");
 				System.out.println("상품 이름, 가격, 개수 입력");
 				Product product = new Product();
 				product.name = sc.nextLine();
@@ -87,27 +89,32 @@ public class Example {
 				
 			}
 			else if(process == 3) {
+				System.out.println("- 수정 -");
 				System.out.println("수정할 목록의 인덱스 넘버 입력 : ");
 				int num = sc.nextInt();
 				sc.nextLine();
 				Product product2 = new Product();
 				System.out.println("수정할 상품 이름, 가격, 개수 입력");
+				System.out.print("상품 이름: ");
 				product2.name = sc.nextLine();
+				System.out.print("상품 가격: ");
 				product2.price = sc.nextInt();
 				sc.nextLine();
+				System.out.print("상품 개수: ");
 				product2.quentity = sc.nextInt();
 				sc.nextLine();
 				list.set(num, product2);
 				
 			}
 			else if(process == 4) {
+				System.out.println("- 삭제 -");
 				System.out.print("삭제할 인덱스 넘버 입력 : ");
 				int num = sc.nextInt();
 				sc.nextLine();
 				list.remove(num);
 				
 			} else if(process != 0 && process > 4) {
-				System.out.print("선택 (0:종료, 1:목록, 2:등록, 3:수정, 4:삭제) : ");
+				
 
 			} else {
 				System.out.println("프로그램 종료");
