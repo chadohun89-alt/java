@@ -113,6 +113,12 @@ public class ProductDAO {
 			pstmt.setInt(2, dto.getProduct_price());
 			pstmt.setInt(3, dto.getProduct_id());
 			int result = pstmt.executeUpdate(); // 0, 1
+			
+			if(result == 0) {
+				System.out.println("제품 번호를 확인해 주세요!");
+			} else {
+				System.out.println("수정 성공!");
+			}
 
 			// --------------------------------------------
 		} catch (Exception e) {
@@ -138,6 +144,12 @@ public class ProductDAO {
 			pstmt.setInt(1, dto.getProduct_id());
 
 			result = pstmt.executeUpdate(); // 0, 1
+			
+			if(result == 0) {
+				System.out.println("삭제 실패!, 코드를 확인해주세요!");
+			}else {
+				System.out.println("삭제 성공!");
+			}
 
 			// --------------------------------------------
 		} catch (Exception e) {

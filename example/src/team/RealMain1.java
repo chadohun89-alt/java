@@ -53,7 +53,6 @@ public class RealMain1 {
 				System.out.println("====================== 제품목록 수정 ======================");
 				productDTO.inputField("sujung");
 				productDAO.setUpdate(productDTO);
-				System.out.println(productDTO);
 				System.out.println("========================================================");
 				break;
 				
@@ -61,7 +60,6 @@ public class RealMain1 {
 				System.out.println("======================== 제품 삭제 ========================");
 				productDTO.inputField("sakje");
 				result = productDAO.setDelete(productDTO);
-				System.out.println("result : "+result);
 				System.out.println("=========================================================");
 				break;
 				

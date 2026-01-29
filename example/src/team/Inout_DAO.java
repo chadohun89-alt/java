@@ -57,7 +57,7 @@ public class Inout_DAO {
             String sql = "SELECT s.*, i.product_name " + //제품 이름
                     "FROM stock_moves s " + //메인 테이블 
                     "JOIN items i ON s.product_id = i.product_id " + //연결기준
-                    "ORDER BY s.inout_id ASC"; //오름자순
+                    "ORDER BY s.inout_id ASC"; //오름차순
             pstmt = conn.prepareStatement(sql);
             rs = pstmt.executeQuery();
 
