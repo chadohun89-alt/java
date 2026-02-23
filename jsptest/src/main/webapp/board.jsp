@@ -14,7 +14,15 @@
 		
 		<main id="main">
 			<p>여기는 게시판이다.</p>
-			<img src="https://picsum.photos/400/300">
+			<div id="listWrap">
+				<a href="/board/write.do">글쓰기</a>
+				
+				<table id="boardList">
+					<tr>
+						<td> <a href="/board/detail.do">나는 글제목</a>  </td>
+					</tr>
+				</table>
+			</div>
 		</main>
 	
 	</div>
